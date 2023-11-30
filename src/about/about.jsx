@@ -10,6 +10,7 @@ const About = (props) => {
 
     const { ref: myRocet, inView: ElIsVisible } = useInView({ threshold: 0.5 })
     const myRef = useRef()
+    
 
     useEffect(()=> {
         if(ElIsVisible){
