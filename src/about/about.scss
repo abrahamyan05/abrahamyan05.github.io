@@ -1,0 +1,236 @@
+@mixin flex($jc) {
+    display: flex;
+    justify-content: $jc;
+}
+
+@mixin width($w) {
+    width: $w;
+}
+
+@mixin height($h) {
+    height: $h;
+}
+
+.aboutConteiner {
+    background-color: #17181c;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+
+    .aboutInner {
+        .aboutMe {
+            text-align: center;
+            padding-bottom: 40px;
+            color: white;
+
+            span {
+                color: #677993;
+            }
+        }
+
+        .aboutInfo {
+            @include width(100%);
+            margin: 0 auto;
+            @include flex(center);
+            color: #ccc;
+
+            .aboutLeft {
+                @include width(50%);
+                padding: 20px;
+
+                .info {
+                    .activity {
+                        p {
+                            color: #bbb;
+                            padding-top: 15px;
+                        }
+                    }
+
+                    .contact {
+                        padding: 20px 0 0 0;
+
+                        ul {
+                            list-style: none;
+
+                            li {
+                                margin-top: 15px;
+                                @include height(30px);
+                                display: flex;
+
+                                span {
+                                    font-size: 16px;
+                                    line-height: 18px;
+                                }
+
+                                .title {
+                                    min-width: 95px;
+                                    @include flex(space-between);
+                                    color: #bbb;
+                                    font-weight: 600;
+
+                                    b {
+                                        margin-right: 10px;
+                                    }
+                                }
+
+                                .titleInfo {
+                                    color: #ccc;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .aboutRight {
+                @include width(50%);
+                padding: 20px;
+                @include flex(center);
+                flex-direction: column;
+
+                .ulRight {
+                    li {
+                        transition: 1.5s;
+                        transform: translateY(120px);
+                        opacity: 0;
+                    }
+                }
+
+                .animation {
+                    li:first-child {
+                        transform: translateY(0px);
+                        transition-delay: 0s;
+                        opacity: 1;
+                    }
+
+                    li:nth-child(2) {
+                        transform: translateY(0px);
+                        transition-delay: 0.3s;
+                        opacity: 1;
+                    }
+
+                    li:nth-child(3) {
+                        transform: translateY(0px);
+                        transition-delay: 0.6s;
+                        opacity: 1;
+                    }
+
+                    li:nth-child(4) {
+                        transform: translateY(0px);
+                        transition-delay: 0.9s;
+                        opacity: 1;
+                    }
+
+                    li:nth-child(5) {
+                        transform: translateY(0px);
+                        transition-delay: 1.2s;
+                        opacity: 1;
+                    }
+
+                    li:nth-child(6) {
+                        transform: translateY(0px);
+                        transition-delay: 1.5s;
+                        opacity: 1;
+                    }
+                }
+
+                ul {
+                    list-style: none;
+
+                    li {
+                        padding: 0 0 20px 0;
+
+                        .skills {
+                            @include flex(space-between);
+                        }
+
+                        .progress-bar {
+                            margin-top: 10px;
+                            @include width(100%);
+                            @include height(5px);
+                            border: 1px solid #ccc;
+                            border-radius: 20px;
+                            position: relative;
+
+                            span {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                @include height(100%);
+                                background-color: #ccc;
+                                border-radius: 20px;
+                                transition: width 0.5s linear;
+                            }
+
+                            .javascript {
+                                @include width(65%);
+                            }
+
+                            .html {
+                                @include width(80%);
+                            }
+
+                            .css {
+                                @include width(70%);
+                            }
+
+                            .react {
+                                @include width(55%);
+                            }
+
+                            .redux {
+                                @include width(50%);
+                            }
+
+                            .github {
+                                @include width(30%)
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .aboutConteiner {
+        @include height(auto);
+        padding: 30px 0;
+
+        .container {
+            padding: 0;
+        }
+
+        .aboutInner {
+            .aboutMe {
+                padding-bottom: 10px;
+            }
+
+            .aboutInfo {
+                flex-direction: column;
+                align-items: center;
+
+                .aboutLeft {
+                    @include width(100%);
+                    padding: 15px;
+
+                    .info .contact ul li {
+                        &:nth-child(4) {
+                            .titleInfo {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+
+                .aboutRight {
+                    @include width(100%);
+                    padding: 15px;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,36 @@
+
+
+.instaContainer{
+    background: #1b1c20;
+    
+
+    .slick-slider {
+        .slick-list {
+            .slick-track {
+                .slick-slide {
+
+                    .card{
+                        padding: 25px 64px;
+                
+                        .card-Inner{
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 30px;
+                            }
+                        }
+                
+                    }
+
+                }
+            }
+        }
+        button {
+            display: none !important;
+        }
+
+        ul {
+            display: none !important;
+        }
+    }
+}

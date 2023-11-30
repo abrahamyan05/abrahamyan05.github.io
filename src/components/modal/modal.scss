@@ -1,0 +1,71 @@
+@mixin whidth_height ($w , $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin transishon_w ($w) {
+    width: $w;
+    transition: all 0.5s ease;
+}
+@mixin pad($pad...){
+    padding: $pad;
+}
+
+.modalWrapper {
+    @include whidth_height(100vw, 1000vh);
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    .menu {
+        @include whidth_height(40%, 100vh);
+        background-color: white;
+        position: absolute;
+        z-index: 22;
+        transition: all 0.5s ease;
+        @include pad(25px 15px);
+        .menuTitleDiv {
+            display: flex;
+            justify-content: space-between;
+            @include pad(0 20px);
+            .closeIcon {
+                border: none;
+                background: none;
+                font-size: 18px;
+                cursor: pointer;
+            }
+        }
+
+        .menuBody {
+            @include pad(20px 20px 0 20px);
+            ul li {
+                margin-top: 10px;
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .modalWrapper .menu {
+        @include transishon_w(60%);
+    }
+}
+
+@media (max-width: 360px) {
+    .modalWrapper .menu {
+        @include transishon_w(100%);
+    }
+}

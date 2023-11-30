@@ -1,0 +1,112 @@
+$height_100: 100%;
+
+@mixin whidth_height ($w , $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin flex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin pad($pad...) {
+    padding: $pad;
+}
+
+
+.header-wrapper {
+    @include whidth_height(100%, 82px);
+    position: fixed;
+    z-index: 5;
+    transition: 0.8s ease-out;
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .maser-logo {
+            height: $height_100;
+
+            a {
+                img {
+                    width: 250px;
+                    height: 50px;
+                }
+            }
+        }
+
+        .menu-list {
+            height: $height_100;
+            @include flex;
+
+            ul {
+                list-style: none;
+                display: flex;
+                @include pad(0);
+
+                li {
+                    margin-right: 15px;
+
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        font-weight: 500;
+
+                        &:hover {
+                            text-decoration: underline;
+                            color: #677993;
+                        }
+                    }
+
+                    .active-link {
+                        color: #677993;
+
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        .iconDiv {
+            height: $height_100;
+            display: flex;
+            align-items: center;
+
+            .iconBtn {
+                background: none;
+                border-radius: 5px;
+                @include flex;
+                cursor: pointer;
+
+                .icon-menu {
+                    height: $height_100;
+                    font-size: 30px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.header-wrapper-fix {
+    height: 62px;
+    background-color: #17181c;
+    transition: 1s ease-in-out;
+}
+
+@media (max-width: 992px) {
+    .header-wrapper {
+        @include whidth_height(100%, 62px);
+    }
+
+    .header-wrapper .header-inner .maser-logo a img {
+        width: 180px;
+    }
+}

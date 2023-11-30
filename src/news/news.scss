@@ -1,0 +1,93 @@
+.newsContainer {
+    background: #1b1c20;
+    padding: 60px 60px;
+
+    .container {
+        padding: 0;
+    }
+
+    .newsInner {
+        .latest {
+            color: #eee;
+            font-size: 30px;
+            line-height: 33px;
+            text-align: center;
+            padding-bottom: 30px;
+
+            span {
+                color: #677993;
+                margin-left: 10px;
+            }
+        }
+
+        .newsSlider {
+            .slick-slider {
+                .slick-list {
+                    .slick-track {
+                        .slick-slide {
+                            padding: 0 20px;
+                            box-sizing: border-box;
+
+                        }
+                    }
+                }
+
+                button {
+                    display: none !important;
+                }
+
+                ul {
+                    display: none !important;
+                }
+            }
+
+            .card {
+                border: 1px solid white;
+                padding: 24px;
+                height: 570px;
+                border-radius: 30px;
+                background: #202126 !important;
+                border-color: #2c2f36 !important;
+
+
+                .card-top {
+                    .imgWrapper {
+                        width: 100%;
+                        overflow: hidden;
+                        border-radius: 20px;
+
+                        img {
+                            width: 100%;
+                            border-radius: 20px;
+                            
+                            &:hover {
+                                filter: blur(1px);
+                                transition: all 1.2s ease-in-out;
+                                transform: rotate(5deg) scale(1.2);
+                            }
+                        }
+                    }
+
+                    .data {
+                        color: #999;
+                        font-size: 13px;
+                        margin-top: 20px;
+                    }
+                }
+
+                .card-bottom {
+                    margin-top: 20px;
+                    color: #eee;
+
+                    h3 {
+                        margin: 10px 0 15px 0;
+                        line-height: 26px;
+                        font-weight: 400;
+                    }
+
+                }
+            }
+
+        }
+    }
+}
